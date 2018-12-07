@@ -15,3 +15,7 @@ Usage:
 ```bash
 ./mp4_mix_video_audio.sh your_video_file.mp4 your_audio_file.mp4
 ```
+
+#Find some text in a file and replace with the content of other file:
+See the  bash script for more information: 
+[**insert_in_line.sh**](https://github.com/bsaldivaremc2/bash_scripts/blob/master/insert_in_line.sh).  

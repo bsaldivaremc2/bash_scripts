@@ -11,3 +11,21 @@ git checkout master
 git merge my-temporary-work
 ```  
 Reference: https://stackoverflow.com/questions/10228760/fix-a-git-detached-head  
+
+If you do git reset --hard <SOME-COMMIT> then Git will:  
+Make your current branch (typically master ) back to point at <SOME-COMMIT> .  
+Then make the files in your working tree and the index ("staging area") the same as the versions committed in <SOME-COMMIT>  
+
+
+__________________________
+
+
+See branches:
+```bash
+git branch
+```
+change of working branch
+```
+git checkout your_branch_name
+
+```
