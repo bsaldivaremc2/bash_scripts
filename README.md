@@ -19,3 +19,17 @@ Usage:
 #Find some text in a file and replace with the content of other file:
 See the  bash script for more information: 
 [**insert_in_line.sh**](https://github.com/bsaldivaremc2/bash_scripts/blob/master/insert_in_line.sh).  
+
+# Protect yourself from rm -rf
+The script **remove_script.sh** will ask you a number of **trials** before running **rm-rf**
+the default is 3 times. 
+copy this line to your ~/.bashrc file:
+```bash
+alias destroy="/home/bpse/Scripts/./remove_script.sh"
+```
+Modify the location of this script according to your computer.
+Instead of **rm** you will use **destroy** 
+
+Example:
+![](./images/destroy_example.png) 
+
