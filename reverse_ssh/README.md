@@ -111,5 +111,29 @@ PRIVATEKEY="ssh_reverse_private.pem"
 **RAW_CONFIG_FILE** contains the path of the encrypted configuration file inside the **GIT_REPO** directory.
 
 
+### Managing sessions
+If you want to close the ssh tunnel:  
 
+* Modify the config file and set your **LC** **STATUS** to **OFFLINE** and push 
+```bash
+git add * && git commit -m "Off" && git push
+```
+* authenticate
+* Check your current connection
 
+```bash
+youruser@yourcomputer:~$who
+#Output 
+remoteuser	pts/19 	2020-05-19 10:23	(123.22.66.3)
+```
+* See the process associated
+```bash
+youruser@yourcomputer:~$ps -ft pts/19
+#Output
+UID        		PID 		 PPID  C STIME TTY          TIME CMD
+remoteuser     17132 	17131  0 11:50 pts/19   00:00:00 -bash
+```
+* Kill process
+```bash
+youruser@yourcomputer:~$kill 17131
+```
