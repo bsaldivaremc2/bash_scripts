@@ -77,7 +77,7 @@ then
 	func_validate_different_exit ${?} 0 "Error cloning repo ${GIT_REPO}. Exit program." "SUCCESS cloning repo ${GIT_REPO}" "${LOGFILE}"
 fi
 #####
-exit 0
+
 
 ls ${RAW_CONFIG_FILE}
 func_validate_different_exit ${?} 0 "Error getting configuration file ${RAW_CONFIG_FILE}. Exit program." "SUCCESS finding config file ${RAW_CONFIG_FILE}" "${LOGFILE}"
