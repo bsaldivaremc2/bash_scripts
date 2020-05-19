@@ -1,11 +1,15 @@
 #!/bin/bash
+MONITORID="LABSERVER1"
+GIT_REPO="https://github.com/bsaldivaremc2/bash_scripts.git"
+RAW_CONFIG_FILE="reverse_ssh/central.config.blurr"
+PRIVATEKEY="ssh_reverse_private.pem"
 
 func_echo_and_log()
 {
 	MESSAGE=${1}
 	INLOGFILE=${2}
 	echo ${MESSAGE}
-	echo ${MESSAGE} >> ${INLOGFILE}	
+	echo ${MESSAGE} >> ${INLOGFILE}
 }
 
 func_validate_different_exit()
@@ -21,7 +25,7 @@ func_validate_different_exit()
 		exit 0
 	else
 		func_echo_and_log "${MESSAGE_SUCCESS}" "${INLOGFILE}"
-	fi	
+	fi
 }
 
 echo "Starting monitor"
@@ -34,14 +38,7 @@ echo "${DATETIME}" >> ${LOGFILE}
 #
 TMPFILE=".tmp.tmp"
 TMPCONFIG=".config.tmp"
-
-MONITORID="URVBSALDIVAR"
-GIT_REPO="https://github.com/bsaldivaremc2/bash_scripts.git"
-#RAW_CONFIG_FILE="remote_ssh/central.config"
-RAW_CONFIG_FILE="reverse_ssh/central.config.blurr"
-CONFIG_FILE="central.config.deblurr"
-PRIVATEKEY="ssh_reverse_private.pem"
-
+CONFIG_FILE=".central.config.deblurr"
 #
 DIR=$(echo "${GIT_REPO}" | awk -F '/' '{print $NF}' | awk -F '.git' '{print $1}')
 RAW_CONFIG_FILE="${DIR}/${RAW_CONFIG_FILE}"
@@ -193,7 +190,7 @@ then
 else
 	echo "connecting to server"
 	echo "Connection NOT running. connecting to server." >> ${LOGFILE}
-	ssh -R ${REVERSE_PORT}:localhost:22 ${REMOTE_USER}@${REMOTE_IP} -p ${REMOTE_PORT} 
+	ssh -R ${REVERSE_PORT}:localhost:22 ${REMOTE_USER}@${REMOTE_IP} -p ${REMOTE_PORT}
 
 fi
 
